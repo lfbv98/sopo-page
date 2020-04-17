@@ -13,7 +13,7 @@ jobs:
             - run: npm test
   development-deploy:
     docker:
-      - image: ubuntu:stable
+      - image: ubuntu:18.04
     steps:
       - checkout
       - run:
