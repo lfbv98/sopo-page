@@ -1,5 +1,3 @@
 ## Integrantes
 
- - Alejandro Cubillos
- - Andrés Otálora
- - Andrés Ramos
+ - Elaboración de pag web.
