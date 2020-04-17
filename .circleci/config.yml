@@ -20,7 +20,7 @@ jobs:
             - "81:6e:15:88:0c:41:53:a2:b2:7e:24:59:25:ef:50:4f"
       - run:
           command: |
-            ssh ubuntu@ec2-18-219-111-1.us-east-2.compute.amazonaws.com "bash .circleci/execute-deploy-ec2.sh"
+            ssh ubuntu@ec2-18-219-111-1.us-east-2.compute.amazonaws.com "mkdir fu"
   production-deploy:
     executor:
       name: node/default
