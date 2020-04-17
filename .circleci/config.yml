@@ -30,7 +30,7 @@ jobs:
             - "81:6e:15:88:0c:41:53:a2:b2:7e:24:59:25:ef:50:4f"
       - run:
           command: |
-          ssh ubuntu@ec2-52-15-177-160.us-east-2.compute.amazonaws.com "bash deploy.sh"
+            ssh ubuntu@ec2-52-15-177-160.us-east-2.compute.amazonaws.com "bash deploy.sh"
 workflows:
     build-and-test:
       jobs:
