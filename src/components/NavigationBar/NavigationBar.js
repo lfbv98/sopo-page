@@ -54,7 +54,7 @@ class NavigationBar extends Component {
             Sopó Cundinamarca
             <br />
             <div className={classes.brandSubtext}>
-              Seguridad y Prosperidaddd
+              Seguridad y Prosperidad
             </div>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -96,7 +96,7 @@ class NavigationBar extends Component {
             Sopó Cundinamarca
             <br />
             <div className={classes.brandSubtext}>
-              Seguridad y Prosperidad
+              Seguridad y Prosperidaddd
             </div>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
