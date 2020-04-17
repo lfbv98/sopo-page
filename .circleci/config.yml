@@ -17,7 +17,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: 'ls'
+          command: 'ls -a'
 workflows:
     build-and-test:
       jobs:
