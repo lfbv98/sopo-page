@@ -30,8 +30,8 @@ workflows:
       jobs:
         - test
         - development-deploy:
-            requires:
-              - test
+          requires:
+            - test
         - production-deploy:
           type: approval
             requires:
