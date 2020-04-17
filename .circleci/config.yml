@@ -16,6 +16,9 @@ jobs:
       - image: doomkin/ubuntu-ssh
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "SO:ME:FIN:G:ER:PR:IN:T"
       - run:
           command: 'bash .circleci/development-deploy.sh'
 workflows:
