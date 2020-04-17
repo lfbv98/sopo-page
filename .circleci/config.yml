@@ -18,6 +18,13 @@ jobs:
       - checkout
       - run:
           command: 'bash .circleci/development-deploy.sh'
+  production-deploy:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run:
+          command: 'bash .circleci/production-deploy.sh'
 workflows:
     build-and-test:
       jobs:
