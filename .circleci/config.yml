@@ -18,7 +18,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "SO:ME:FIN:G:ER:PR:IN:T"
+            - "81:6e:15:88:0c:41:53:a2:b2:7e:24:59:25:ef:50:4f"
       - run:
           command: 'bash .circleci/development-deploy.sh'
 workflows:
