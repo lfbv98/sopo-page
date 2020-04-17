@@ -1,0 +1,17 @@
+.titleImg {
+    width: 200px;
+    height: auto;
+    margin-left: 25px;
+}
+
+.img {
+    height: 200px;
+    width: 100%;
+}
+
+.content{
+    width: 95%;
+    margin: 0;
+    margin-bottom: 5%;
+    padding: 0;
+}

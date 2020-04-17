@@ -1,0 +1,33 @@
+.webDesc{
+    position: relative;
+    color: #666666;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.content{
+    width: 95%;
+    margin-bottom: 5%;
+}
+
+.anuncio{
+    margin-top: 40px;
+}
+
+.anunT{
+    font-size: 30px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: lighter;
+    color: gray;
+    position: absolute;
+    top: 50%;
+}
+
+.infoLink{
+    position: absolute;
+    bottom: 5px;
+    right: 8px;
+}

@@ -1,0 +1,18 @@
+.clima{
+    width: 15%;
+}
+
+@keyframes sun-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+.sun {
+  animation: App-logo-spin infinite 20s linear;
+  pointer-events: none;
+}
+
