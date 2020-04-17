@@ -22,4 +22,3 @@ workflows:
               branches:
                 only:
                   - master
-                  - beta
