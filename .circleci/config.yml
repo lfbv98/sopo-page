@@ -15,6 +15,7 @@ jobs:
     executor:
       name: node/default
     steps:
+      - checkout
       - run:
           command: 'bash .circleci/development-deploy.sh'
 workflows:
