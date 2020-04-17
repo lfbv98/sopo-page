@@ -13,7 +13,7 @@ jobs:
             - run: npm test
   development-deploy:
     docker:
-      - image: ubuntu:18.04
+      - image: doomkin/ubuntu-ssh
     steps:
       - checkout
       - run:
