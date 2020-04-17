@@ -1,2 +1,2 @@
 ls
-cd .circleci development-deploy.sh
+cd .circleci

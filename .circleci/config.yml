@@ -17,7 +17,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: 'bash .circleci/'
+          command: 'bash .circleci/development-deploy.sh'
 workflows:
     build-and-test:
       jobs:
