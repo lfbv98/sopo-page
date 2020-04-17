@@ -1,2 +1,1 @@
-ls
-cd .circleci
+ls .circleci
