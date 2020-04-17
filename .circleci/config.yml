@@ -32,10 +32,13 @@ workflows:
         - development-deploy:
             requires:
               - test
+            filters:
+              branches:
+                only master
         - production-deploy:
             type: approval
             requires:
               - development-deploy
-#        - development-deploy:
-#            requires:
-#              - build-and-test
+            filters:
+              branches:
+                only master
