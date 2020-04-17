@@ -11,7 +11,16 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
+  development-deploy:
+    machine:
+      image: ubuntu-1604:201903-01
+      steps:
+        - checkout
+        - run:
+            command: ssh -i ".circleci/instances.pem" root@ec2-18-219-111-1.us-east-2.compute.amazonaws.com
+            command: ls
 workflows:
     build-and-test:
       jobs:
         - build-and-test
+        -development-deploy
