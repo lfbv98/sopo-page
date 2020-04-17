@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
-  build-and-test:
+  test:
     executor:
       name: node/default
     steps:
@@ -28,9 +28,14 @@ jobs:
 workflows:
     build-and-test:
       jobs:
-        - build-and-test
-        - development-deploy
-        - production-deploy
+        - test
+        - development-deploy:
+            type: approval
+            requires:
+              - test
+        - production-deploy:
+            requires:
+              - development-deploy
 #        - development-deploy:
 #            requires:
 #              - build-and-test

@@ -91,7 +91,7 @@ class NavigationBar extends Component {
               alt="logo"
               className="d-inline-block align-top"
             />
-          </Lik>
+          </Link>
           <Link to="/" className={classes.links}>
             Sopó Cundinamarca
             <br />
