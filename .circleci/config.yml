@@ -20,14 +20,17 @@ jobs:
             - "81:6e:15:88:0c:41:53:a2:b2:7e:24:59:25:ef:50:4f"
       - run:
           command: |
-            ssh ubuntu@ec2-18-219-111-1.us-east-2.compute.amazonaws.com "mkdir fu"
+            ssh ubuntu@ec2-18-219-111-1.us-east-2.compute.amazonaws.com "bash deploy.sh"
   production-deploy:
     executor:
       name: node/default
     steps:
-      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "81:6e:15:88:0c:41:53:a2:b2:7e:24:59:25:ef:50:4f"
       - run:
-          command: 'bash .circleci/production-deploy.sh'
+          command: |
+          ssh ubuntu@ec2-52-15-177-160.us-east-2.compute.amazonaws.com "bash deploy.sh"
 workflows:
     build-and-test:
       jobs:
