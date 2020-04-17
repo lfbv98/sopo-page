@@ -14,11 +14,8 @@ jobs:
 workflows:
     build-and-test:
       jobs:
-        - build-and-test
-      triggers: #use the triggers key to indicate a scheduled build
-        - schedule:
-            cron: "0 0 * * *" # use cron syntax to set the schedule
-            filters:
-              branches:
-                only:
-                  - master
+        - build-and-test:
+          filters:
+            branches:
+              only:
+                - master
