@@ -54,7 +54,7 @@ class NavigationBar extends Component {
             Sopó Cundinamarca
             <br />
             <div className={classes.brandSubtext}>
-              Seguridad y Prosperidad
+              Seguridad y Prosperidaddd
             </div>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -63,7 +63,7 @@ class NavigationBar extends Component {
               <Link className={classes.links} to="/tourism">Turismo</Link>
               <Link className={classes.links} to="/news">Noticias</Link>
             </Nav>
-            <Weather/>
+            <Weather />
             <Nav>
               <Nav.Link href="https://www.youtube.com/user/alcaldiadesopo/videos" target="_blank"><i class="fab fa-youtube fa-lg"></i></Nav.Link>
               <Nav.Link href="https://es-la.facebook.com/AlcaldiadeSopo/" target="_blank"><i class="fab fa-facebook-f fa-lg"></i></Nav.Link>
@@ -105,7 +105,7 @@ class NavigationBar extends Component {
               <Link className={classes.links} to="/tourism">Turismo</Link>
               <Link className={classes.links} to="/news">Noticias</Link>
             </Nav>
-            <Weather/>
+            <Weather />
             <Nav>
               <Nav.Link href="https://www.youtube.com/user/alcaldiadesopo/videos" target="_blank"><i class="fab fa-youtube fa-lg"></i></Nav.Link>
               <Nav.Link href="https://es-la.facebook.com/AlcaldiadeSopo/" target="_blank"><i class="fab fa-facebook-f fa-lg"></i></Nav.Link>
