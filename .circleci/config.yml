@@ -17,7 +17,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: 'ssh -i "ls'
+          command: 'ls'
 workflows:
     build-and-test:
       jobs:
