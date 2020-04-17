@@ -12,10 +12,9 @@ jobs:
             - run: npm install
             - run: npm test
   development-deploy:
-    executor:
-      name: node/default
+    machine:
+      enabled: true
     steps:
-      - checkout
       - add_ssh_key:
           fingerprints:
             - "81:6e:15:88:0c:41:53:a2:b2:7e:24:59:25:ef:50:4f"
