@@ -13,8 +13,8 @@ jobs:
             - run: npm test
             - run: npm run build
   development-deploy:
-    docker:
-      - image: doomkin/ubuntu-ssh
+    executor:
+      name: node/default
     steps:
       - checkout
       - add_ssh_keys:
