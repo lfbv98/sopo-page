@@ -18,7 +18,6 @@ jobs:
       - checkout
       - run:
           command: 'ssh -i ".circleci/instances.pem" root@ec2-18-219-111-1.us-east-2.compute.amazonaws.com'
-          command: 'ls'
 workflows:
     build-and-test:
       jobs:
