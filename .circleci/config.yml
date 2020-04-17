@@ -34,11 +34,11 @@ workflows:
               - test
             filters:
               branches:
-                only master
+                only: master
         - production-deploy:
             type: approval
             requires:
               - development-deploy
             filters:
               branches:
-                only master
+                only: master
