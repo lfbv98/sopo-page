@@ -12,6 +12,8 @@ jobs:
             - run: npm install
             - run: npm test
   development-deploy:
+    machine:
+      enabled: true
     steps:
       - add_ssh_keys:
           fingerprints:
