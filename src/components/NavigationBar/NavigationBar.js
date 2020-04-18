@@ -98,7 +98,7 @@ class NavigationBar extends Component {
             <div className={classes.brandSubtext}>
               Seguridad y Prosperidad
             </div>
-          </Lik>
+          </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
