@@ -45,9 +45,11 @@ workflows:
                 only: master
         - approval-job:
             type: approval
-        - production-deploy:
             requires:
               - development-deploy
+        - production-deploy:
+            requires:
+              - approval-job
             filters:
               branches:
                 only: master
