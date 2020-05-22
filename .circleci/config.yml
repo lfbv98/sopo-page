@@ -15,9 +15,6 @@ jobs:
           install-kubectl: true
           resource-group: Ubuntu
       - run:
-          command: kubectl apply -f web1.yaml --namespace ingress-basic
-          name: Apply new deployment to web 1
-      - run:
           command: ls
   test:
     executor:
@@ -29,37 +26,12 @@ jobs:
             - run: npm install
             - run: npm test
             - run: npm build
-            - run:
-              command: kubectl get pods
-              name: Apply new deployment to web 1
-  development-deploy:
-
-  approval-job:
-
-  production-deploy:
+            - run: kubectl get pods
 workflows:
     build-and-test:
       jobs:
+        - login-to-azure
         - test:
-            filters:
-              branches:
-                only: master
-        - development-deploy:
-            requires:
-              - test
-            filters:
-              branches:
-                only: master
-        - approval-job:
-            type: approval
-            requires:
-              - development-deploy
-            filters:
-              branches:
-                only: master
-        - production-deploy:
-            requires:
-              - approval-job
             filters:
               branches:
                 only: master
