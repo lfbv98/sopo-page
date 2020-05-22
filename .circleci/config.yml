@@ -15,7 +15,7 @@ jobs:
           install-kubectl: true
           resource-group: Ubuntu
       - run:
-          command: apt install nodejs
+          command: npm version
       - run:
           command: ls
 workflows:
