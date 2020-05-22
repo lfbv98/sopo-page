@@ -23,7 +23,20 @@ jobs:
             - run: npm test
             - run: npm run build
       - run:
-          command: ls
+          command: ls build
+          name: Deleted last configmap
+      - run:
+          command: kubectl delete configmap web1-page --namespace ingress-basic
+          name: Deleted last configmap
+      - run:
+          command: kubectl create configmap web1-page --from-file=build/ --namespace ingress-basic
+          name: Deleted last configmap
+      - run:
+          command: kubectl scale --replicas=0 deployment web1 --namespace ingress-basic
+          name: Remove all the replicas
+      - run:
+          command: kubectl scale --replicas=1 deployment web1 --namespace ingress-basic
+          name: Restart the replicas
 workflows:
     build-and-test:
       jobs:
