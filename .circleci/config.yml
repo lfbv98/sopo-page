@@ -1,7 +1,24 @@
 version: 2.1
 orbs:
+  azure-aks: circleci/azure-aks@0.2.1
   node: circleci/node@1.1.6
 jobs:
+  login-to-azure:
+    executor: azure-aks/azure-docker
+    steps:
+      - checkout
+      - run:
+          command: az login -u andresram@unisabana.edu.co -p APFol9824XD
+          name: Sign In to Azure CLI
+      - azure-aks/update-kubeconfig-with-credentials:
+          cluster-name: cluster
+          install-kubectl: true
+          resource-group: Ubuntu
+      - run:
+          command: kubectl apply -f web1.yaml --namespace ingress-basic
+          name: Apply new deployment to web 1
+      - run:
+          command: ls
   test:
     executor:
       name: node/default
@@ -11,28 +28,15 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
+            - run: npm build
+            - run:
+              command: kubectl get pods
+              name: Apply new deployment to web 1
   development-deploy:
-    machine:
-      enabled: true
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "81:6e:15:88:0c:41:53:a2:b2:7e:24:59:25:ef:50:4f"
-      - run:
-          command: |
-            ssh ubuntu@ec2-18-219-111-1.us-east-2.compute.amazonaws.com "bash deploy.sh"
+
   approval-job:
 
   production-deploy:
-    machine:
-      enabled: true
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "81:6e:15:88:0c:41:53:a2:b2:7e:24:59:25:ef:50:4f"
-      - run:
-          command: |
-            ssh ubuntu@ec2-52-15-177-160.us-east-2.compute.amazonaws.com "bash deploy.sh"
 workflows:
     build-and-test:
       jobs:
