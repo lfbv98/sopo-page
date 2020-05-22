@@ -17,6 +17,10 @@ jobs:
       - node/install:
           install-yarn: true
           node-version: latest
+      - node/with-cache:
+          steps:
+            - run: npm install
+            - run: npm test
       - run:
           command: ls
 workflows:
