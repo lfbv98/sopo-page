@@ -14,10 +14,9 @@ jobs:
           cluster-name: cluster
           install-kubectl: true
           resource-group: Ubuntu
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run: npm test
+      - node/install:
+          install-yarn: true
+          node-version: latest
       - run:
           command: ls
 workflows:
