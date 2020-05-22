@@ -15,23 +15,10 @@ jobs:
           install-kubectl: true
           resource-group: Ubuntu
       - run:
-          command: ls
-  test:
-    executor:
-      name: node/default
-    steps:
-      - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run: npm test
-            - run: npm build
-            - run: kubectl get pods
+          comand: apt install nodejs
+      - run:
+            command: ls
 workflows:
     build-and-test:
       jobs:
         - login-to-azure
-        - test:
-            filters:
-              branches:
-                only: master
