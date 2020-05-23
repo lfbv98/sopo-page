@@ -1,7 +1,6 @@
 version: 2.1
 orbs:
   azure-aks: circleci/azure-aks@0.2.1
-  node: circleci/node@1.1.6
 jobs:
   login-to-azure:
     executor: azure-aks/azure-docker
@@ -14,14 +13,6 @@ jobs:
           cluster-name: cluster
           install-kubectl: true
           resource-group: Ubuntu
-      - node/install:
-          install-yarn: true
-          node-version: latest
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run: npm test
-            - run: npm run build
       - run:
           command: ls build
           name: Deleted last configmap
@@ -29,7 +20,7 @@ jobs:
           command: kubectl delete configmap web1-page --namespace ingress-basic
           name: Deleted last configmap
       - run:
-          command: kubectl create configmap web1-page --from-file=build/ --namespace ingress-basic
+          command: kubectl create configmap web1-page --from-file=web1/ --namespace ingress-basic
           name: Deleted last configmap
       - run:
           command: kubectl scale --replicas=0 deployment web1 --namespace ingress-basic
