@@ -14,14 +14,11 @@ jobs:
           install-kubectl: true
           resource-group: Ubuntu
       - run:
-          command: ls build
-          name: Deleted last configmap
-      - run:
           command: kubectl delete configmap web1-page --namespace ingress-basic
           name: Deleted last configmap
       - run:
           command: kubectl create configmap web1-page --from-file=web1/ --namespace ingress-basic
-          name: Deleted last configmap
+          name: Deleted update configmap
       - run:
           command: kubectl scale --replicas=0 deployment web1 --namespace ingress-basic
           name: Remove all the replicas
